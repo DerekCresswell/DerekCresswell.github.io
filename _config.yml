@@ -9,5 +9,7 @@ description: >-
 domain: derekcresswell.github.io
 url: https://derekcresswell.github.io
 
+source: site
+
 plugins:
   - jekyll-feed
