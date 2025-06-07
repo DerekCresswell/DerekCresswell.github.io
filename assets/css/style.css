@@ -25,6 +25,11 @@ header {
     width: 100%;
 }
 
+.no-decoration {
+    text-decoration: none;
+    color: inherit;
+}
+
 main {
     width: 100%;
     max-width: 1200px;
