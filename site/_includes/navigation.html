@@ -1,8 +1,16 @@
 <nav>
     <ul class="nav-links">
-        <li><a href="/about">About</a></li>
-        <li><a href="/blog">Blog Posts</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+		{% for item in site.data.navigation %}
+			<li>
+				<a
+					href="{{ item.link }}"
+					{% if page.url == item.link %}
+						class="active-link"
+					{% endif %}
+				>
+					{{ item.name }}
+				</a>
+			</li>
+		{% endfor %}
     </ul>
 </nav>
