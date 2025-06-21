@@ -13,6 +13,9 @@
             {% include navigation.html %}
         </header>
         <main>
+            {% if page.url != "/" %}
+                <h2>{{ page.title }}</h2>
+            {% endif %}
             {{ content }}
         </main>
         <footer>
