@@ -10,14 +10,7 @@
     <div class="content-wrapper">
         <header>
             <h1><a href="/" class="no-decoration">Derek Cresswell</a></h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/blog">Blog Posts</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            {% include navigation.html %}
         </header>
         <main>
             {{ content }}
