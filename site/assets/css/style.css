@@ -4,8 +4,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: Helvetica, sans-serif;
+    background-color: #f4f4f47d;
 }
 
 header {
@@ -15,23 +15,6 @@ header {
     font-size: 1.5em;
     font-weight: bold;
     color: #333;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    justify-content: space-evenly;
-    width: 100%;
-}
-.active-link {
-    color: #007bff;
-}
-
-.no-decoration {
-    text-decoration: none;
-    color: inherit;
 }
 
 main {
@@ -48,4 +31,21 @@ footer {
     margin-top: 20px;
     font-size: 1em;
     color: #666;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.active-link {
+    color: #007bff;
+}
+
+.no-decoration {
+    list-style: none;
 }

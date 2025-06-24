@@ -5,13 +5,19 @@ title: Blog
 
 <p>This is where I share my learning, ramblings, and insights into the world of programming.</p>
 
-<h2>Recent Posts</h2>
-<ul>
+<h2>Recent Posts:</h2>
+<ul class="no-decoration">
     {% for post in site.posts %}
-    <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        | <span class="post-date">{{ post.date | date: "%d/%m/%Y" }}</span>
-        <p>{{ post.excerpt }}</p>
-    </li>
+        <li>
+            <a href="{{ post.url }}">{{ post.title }}</a> | <span class="post-date">{{ post.date | date: "%d/%m/%Y" }}</span>
+            <p>{{ post.excerpt }}</p>
+            {% unless forloop.last %}
+                <hr />
+            {% endunless %}
+        </li>
+    {% else %}
+        <li>
+            <p>No posts available at the moment. Check back soon...</p>
+        </li>
     {% endfor %}
 </ul>
