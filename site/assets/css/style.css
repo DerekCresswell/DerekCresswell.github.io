@@ -33,6 +33,19 @@ footer {
     color: #666;
 }
 
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:visited {
+    color: #007bff;
+}
+
+a:hover {
+    color: #0058b7;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -48,4 +61,25 @@ footer {
 
 .no-decoration {
     list-style: none;
+}
+
+.post-title {}
+
+.post-date {
+    font-style: italic;
+}
+
+.blog-listing {
+    padding: 8px;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+}
+
+.blog-listing-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.divider {
+    padding: 10px;
 }
