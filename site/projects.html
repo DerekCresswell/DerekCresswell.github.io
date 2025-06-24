@@ -2,3 +2,11 @@
 layout: default
 title: Projects
 ---
+<ul class="no-decoration">
+    {% for project in site.data.projects %}
+        <li>
+            <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
+            <p>{{ project.description }}</p>
+        </li>
+    {% endfor %}
+</ul>
