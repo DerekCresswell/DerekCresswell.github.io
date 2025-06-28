@@ -83,3 +83,17 @@ a:hover {
 .divider {
     padding: 10px;
 }
+
+.title-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture {
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-right:25px;
+}
