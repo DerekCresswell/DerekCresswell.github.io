@@ -96,3 +96,7 @@ a:hover {
     display: block;
     margin-right:25px;
 }
+
+.contact-list {
+    padding: 0;
+}
