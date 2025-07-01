@@ -1,0 +1,50 @@
+- company: AMD
+  url: https://www.amd.com/
+  start_date: January 2026
+  end_date: Present
+  position: Software Development Engineer 2
+  position_description:
+    - Pioneered a full migration from legacy Makefile-based build systems to CMake, reducing build times by 10x and dramatically shortening CI pipelines, enabling faster code-test iteration for developers.
+    - Led refactoring of a core kernel-mode driver library from C to modern C++, streamlining features and integrating an on-hardware test suite for GPU driver validation.
+    - Collaborated with cross-functional teams to standardize configuration and settings management across Kernel-mode drivers and User-mode applications.
+  company_description: |
+    AMD is a leading semiconductor company that develops computer processors and GPUs for business and consumer markets.
+- company: University of Toronto
+  url: https://www.utoronto.ca/
+  start_date: April 2023
+  end_date: April 2024
+  position: Computer Science Research Assistant
+  position_description:
+    - Built compiler-level machine learning optimizations for GPU matrix multiplications in C++ and Python providing a 2x speedup on benchmarks (under Prof. Dehnavi and the UTEA award).
+    - Created and presented 50-minute lectures on educational paradigms (under Prof. Gries and Prof. Calver).
+    - Programmed a threading sub-system in a Rust Operating System for the x86 platform (under Prof. Sun).
+  company_description: |
+    The University of Toronto is the top university in Canada and boasts one of the highest rated computer science programs worldwide.
+- company: University of Toronto
+  url: https://www.utoronto.ca/
+  start_date: September 2022
+  end_date: April 2024
+  position: Computer Science Teacher's Assistant
+  position_description:
+    - Mentored 16 student teams on large-scale Java projects using Clean Architecture, guiding them through system design, implementation, and testing.
+    - Hosted lab sessions and revamped Git and software architecture materials, clarifying and aligning these courses with real-world software engineering practices.
+- company: Acro Commerce
+  url: https://www.acrocommerce.com/
+  start_date: October 2019
+  end_date: May 2022
+  position: Backend Software Engineer
+  position_description:
+    - Designed and implemented GitLab CI/CD pipelines, unifying deployments across 100+ company websites.
+    - Maintained and improved 4 internal C++ systems that powered daily workflows for project and account managers, including tools for tracking issues, time logging, and client accounts.
+    - Developed AWS-based data tooling (Lambda, Redshift) to consolidate 20+ years of company data for centralized business intelligence and analytics research.
+  company_description: |
+    Acro Commerce is a B2B company producing complex E-commerce solutions for large enterprises.
+- company: Hiilite
+  url: https://hiilite.com/
+  start_date: August 2019
+  end_date: October 2019
+  position: Web Developer
+  position_description:
+    - Delivered production-ready PHP backends and React.js frontends aligned with detailed design specifications ensuring consistency across engineering and design teams.
+  company_description: |
+    Hiilite is a digital marketing agency that specializes in web design and SEO services.
