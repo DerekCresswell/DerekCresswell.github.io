@@ -4,9 +4,12 @@ title: Projects
 ---
 <ul class="no-decoration">
     {% for project in site.data.projects %}
-        <li>
-            <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
+        <li class="listing">
+            <a href="{{ project.url }}" class="listing-title">{{ project.name }}</a>
             <p>{{ project.description }}</p>
         </li>
+        {% unless forloop.last %}
+            <div class="divider"></div>
+        {% endunless %}
     {% endfor %}
 </ul>
