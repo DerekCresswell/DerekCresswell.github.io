@@ -106,8 +106,10 @@ a:hover {
     background-color: #f9f9f9;
     border-radius: 8px;
     margin-top: 15px;
+    width: fit-content;
 }
 
 .table-of-contents ul {
     margin: 0;
+    padding-left: 20px;
 }
