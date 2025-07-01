@@ -11,7 +11,7 @@ title: Homepage
     <a href="/blog">
         <h2>Blog</h2>
     </a>
-    <p>This is where I share my learning, ramblings, and insights into the world of programming.</p>
+    {% include blog_brief.html %}
     {% if site.posts.size > 0 %}
         Checkout my latest post:
         <ul class="no-decoration">
@@ -21,6 +21,7 @@ title: Homepage
             {% endfor %}
         </ul>
     {% endif %}
+    The rest of my posts can be found <a href="/blog">here</a>.
 </section>
 <section id="projects">
     <a href="/projects">
