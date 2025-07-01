@@ -100,3 +100,14 @@ a:hover {
 .contact-list {
     padding: 0;
 }
+
+.table-of-contents {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.table-of-contents ul {
+    margin: 0;
+}
