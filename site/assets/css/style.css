@@ -132,3 +132,7 @@ a:hover {
 .career-description-list {
     margin-top: 15px;
 }
+
+.resume-viewer object {
+    height: 1050px
+}
