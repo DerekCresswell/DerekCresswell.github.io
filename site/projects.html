@@ -2,14 +2,16 @@
 layout: default
 title: Projects
 ---
-<ul class="no-decoration">
-    {% for project in site.data.projects %}
-        <li class="listing">
-            <a href="{{ project.url }}" class="listing-title">{{ project.name }}</a>
-            <p>{{ project.description }}</p>
-        </li>
-        {% unless forloop.last %}
-            <div class="divider"></div>
-        {% endunless %}
-    {% endfor %}
-</ul>
+
+{% assign project_listings = "" | split: "" %}
+{% for project in site.data.projects %}
+    {% capture project_listing_capture %}
+        {% include project_listing.html project=project %}
+    {% endcapture %}
+    {% assign project_listings = project_listings | push: project_listing_capture %}
+{% endfor %}
+
+{% include alternating_list.html
+    empty_message="No projects are listed right now. Check back soon..."
+    items=project_listings
+%}

@@ -1,0 +1,28 @@
+<ul class="no-decoration alternating-list">
+    {% for listing in include.items %}
+
+        <li
+            {% if forloop.length == 1 %}
+                class="listing single-listing"
+            {% else %}
+                {% assign is_even = forloop.index0 | modulo: 2 %}
+                {% if is_even == 0 %}
+                    class="listing left-listing"
+                {% else %}
+                    class="listing right-listing"
+                {% endif %}
+            {% endif %}
+        >
+            {{ listing }}
+        </li>
+
+        {% unless forloop.last %}
+            <div class="divider"></div>
+        {% endunless %}
+
+    {% else %}
+        <p>
+            {{ include.empty_message }}
+        </p>
+    {% endfor %}
+</ul>

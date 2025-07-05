@@ -14,9 +14,11 @@ title: Homepage
     {% include blog_brief.html %}
     {% if site.posts.size > 0 %}
         Checkout my latest post:
-        <ul class="no-decoration">
+        <ul class="no-decoration alternating-list">
             {% for post in site.posts %}
-                {% include blog_listing.html post=post %}
+                <li class="listing single-listing">
+                    {% include blog_listing.html post=post %}
+                </li>
                 {% break %}
             {% endfor %}
         </ul>

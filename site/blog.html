@@ -7,15 +7,15 @@ title: Blog
 
 <h2>Recent Posts:</h2>
 
-<ul class="no-decoration">
-    {% for post in site.posts %}
+{% assign blog_listings = "" | split: "" %}
+{% for post in site.posts %}
+    {% capture blog_listing_capture %}
         {% include blog_listing.html post=post %}
-        {% unless forloop.last %}
-            <div class="divider"></div>
-        {% endunless %}
-    {% else %}
-        <li>
-            <p>No posts available at the moment. Check back soon...</p>
-        </li>
-    {% endfor %}
-</ul>
+    {% endcapture %}
+    {% assign blog_listings = blog_listings | push: blog_listing_capture %}
+{% endfor %}
+
+{% include alternating_list.html
+    empty_message="No posts available at the moment. Check back soon..."
+    items=blog_listings
+%}

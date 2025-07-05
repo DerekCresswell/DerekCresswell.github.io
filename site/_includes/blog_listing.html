@@ -1,4 +1,2 @@
-<li class="listing">
-    <a href="{{ post.url }}" class="listing-title">{{ post.title }}</a> | <span class="listing-date">{{ post.date | date: "%d/%m/%Y" }}</span>
-    <p>{{ post.excerpt }}</p>
-</li>
+<a href="{{ include.post.url }}" class="listing-title">{{ include.post.title }}</a> | <span class="listing-date">{{ include.post.date | date: "%d/%m/%Y" }}</span>
+<p>{{ include.post.excerpt }}</p>
