@@ -11,5 +11,7 @@ url: https://derekcresswell.ca
 
 source: site
 
+theme: null
+
 plugins:
   - jekyll-feed
