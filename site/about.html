@@ -24,29 +24,31 @@ title: About
 
 <h3 id="career">Career</h3>
 
-<ul class="no-decoration">
-    {% for career in site.data.careers %}
-        <li class="listing">
-            <span class="listing-title">{{ career.position }}</span>
-            @
-            <a href="{{ career.url }}">{{ career.company }}</a>
-            |
-            <span class="listing-date">{{ career.start_date }} - {{ career.end_date }}</span>
-            <ul class="career-description-list">
-                {% for description in career.position_description %}
-                    <li>{{ description }}</li>
-                {% endfor %}
-            </ul>
-            {% if career.company_description %}
-                <hr />
-                <p>{{ career.company_description }}</p>
-            {% endif %}
-        </li>
-        {% unless forloop.last %}
-            <div class="divider"></div>
-        {% endunless %}
-    {% endfor %}
-</ul>
+{% assign careers = "" | split: "" %}
+{% for career in site.data.careers %}
+    {% capture career_capture %}
+        <span class="listing-title">{{ career.position }}</span>
+        @
+        <a href="{{ career.url }}">{{ career.company }}</a>
+        |
+        <span class="listing-date">{{ career.start_date }} - {{ career.end_date }}</span>
+        <ul class="career-description-list">
+            {% for description in career.position_description %}
+                <li>{{ description }}</li>
+            {% endfor %}
+        </ul>
+        {% if career.company_description %}
+            <hr />
+            <p>{{ career.company_description }}</p>
+        {% endif %}
+    {% endcapture %}
+    {% assign careers = careers | push: career_capture %}
+{% endfor %}
+
+{% include alternating_list.html
+    items=careers
+    empty_message="Apparently I haven't worked anywhere yet. Odd."
+%}
 
 <h4 id="resume">Resume</h4>
 <p>
