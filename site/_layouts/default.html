@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Derek Cresswell{% if page.url != "/" %}: {{ page.title }}{% endif %}</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="icon" type="image/png" href="/assets/images/pfp.png">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ '/assets/images/pfp.png' | relative_url }}"">
 </head>
 <body>
     <div class="content-wrapper">
@@ -26,9 +26,7 @@
             {% endunless %}
             {{ content }}
         </main>
-        <footer>
-            <p>&copy; 2025 Derek Cresswell</p>
-        </footer>
+        {% include footer.html %}
     </div>
 </body>
 </html>
