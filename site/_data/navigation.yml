@@ -4,5 +4,7 @@
   link: /blog.html
 - name: Projects
   link: /projects.html
+- name: Resume
+  link: /assets/documents/resume.txt
 - name: Contact
   link: /contact.html
