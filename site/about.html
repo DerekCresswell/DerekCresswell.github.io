@@ -1,0 +1,254 @@
+---
+layout: default
+title: About
+---
+
+<div class="table-of-contents">
+    <ul>
+        <li><a href="#career">Career</a></li>
+        <ul>
+            <li><a href="#resume">Resume</a></li>
+        </ul>
+        <li><a href="#education">Education</a></li>
+        <ul>
+            <li><a href="#research-projects">Research Projects</a></li>
+            <li><a href="#awards-and-scholarships">Awards & Scholarships</a></li>
+            <li><a href="#english-language-teaching">English Language Teaching</a></li>
+        </ul>
+        <li><a href="#what-do-i-program">What Do I Program?</a></li>
+        <li><a href="#why-do-i-program">Why Do I Program?</a></li>
+        <li><a href="#why-does-your-site-look-like-that">Why Does Your Site Look Like That?</a></li>
+    </ul>
+</div>
+
+{% include about_brief.html %}
+
+<h3 id="career">Career</h3>
+
+{% assign careers = "" | split: "" %}
+{% for career in site.data.careers %}
+    {% capture career_capture %}
+        <span class="listing-title">{{ career.position }}</span>
+        @
+        <a href="{{ career.url }}">{{ career.company }}</a>
+        |
+        <span class="listing-date">{{ career.start_date }} - {{ career.end_date }}</span>
+        <ul class="career-description-list">
+            {% for description in career.position_description %}
+                <li>{{ description }}</li>
+            {% endfor %}
+        </ul>
+        {% if career.company_description %}
+            <hr />
+            <p>{{ career.company_description }}</p>
+        {% endif %}
+    {% endcapture %}
+    {% assign careers = careers | push: career_capture %}
+{% endfor %}
+
+{% include alternating_list.html
+    items=careers
+    empty_message="Apparently I haven't worked anywhere yet. Odd."
+%}
+
+<h4 id="resume">Resume</h4>
+<p>
+    All of this information can be found on my resume.
+    The up-to-date resume is available <a href="/resume.html">here</a>.
+</p>
+
+<h3 id="education">Education</h3>
+<p>
+    In 2024, I received my Honours Bachelor of Science from the <a href="https://www.utoronto.ca/">University of Toronto</a>.
+    I did a specialist in Computer science and a Minor in Mathematics.
+    For all 4 years of my degree I was a Dean's List Scholar and I graduated with a CGPA of 3.92.
+</p>
+<p>
+    My main focus was on operating systems, compilers, and programming languages.
+    While I did a lot of low-level programming in my courses, I also spent a good deal of time reviewing the theoretical side of projects.
+    This included the typical algorithm courses, but also extended to ideas in formal methods of programming, graph theory, parallel computing, network architecture, and machine learning.
+</p>
+<p>
+    Lucky for me, I was also able to take a number of breadth courses outside of the sciences.
+    I had a lot of fun in a science fiction film study course as I would get to geek out with my classmates about the intricacies of film (check out my <a href="https://letterboxd.com/DerekJC">Letterboxd</a>!).
+    I also did two literature courses in science fiction, so I guess that I am a bit of a science fiction wiz!
+    Another very interesting set of courses I did was on the philosophy of science.
+    Essentially these were talking about the scientific method, why we use it, and how we can determine whether we have actual knowledge!
+</p>
+<p>
+    No matter how focused you are on your field, I think it is important to take courses outside of your main area of study.
+    Not only does it expand your horizons, but it also lets you breathe a bit and this can be very important in managing stress.
+</p>
+
+<h4 id="research-projects">Research Projects</h4>
+<p>
+    During my university degree, I was fortunate enough to be able to work on a number of research projects.
+</p>
+
+<h5>Compiler-Level GPU Optimizations</h5>
+<p>
+    My first research project was done as part of the <a href="http://www.paramathic.com">Paramathics Research Group</a>.
+    This group is part of the Computer Science department at the University of Toronto and is lead by Professor Dehnavi.
+    I received funding for this project through the <a href="https://www.registrar.utoronto.ca/financial-aid-awards/utea">University of Toronto Excellence Award (UTEA)</a>.
+</p>
+<p>
+    In this project, I worked alongside a Ph.D. student to develop new methods of optimizing matrix operations on the GPU.
+    Our approach was to leverage the <a href="https://pytorch.org/">Pytorch framework</a> to compile optimized matrix multiplications for neural networks.
+    We found that existing neural networks had a large quantity of redundant weights.
+    These were weights that could be removed without significantly degrading the quality of predictions.
+    Using this, we implemented a compiler stage that would remove redundant weights until 50% of the original weights remained.
+    This allowed for us to feed the matrix multiplications into sparse tensor cores on an NVIDIA GPU.
+    By the nature of sparse tensor cores, this sped up the modified multiplications by 2x at no overhead cost.
+</p>
+<p>
+    Originally we determined redundant weights by zeroing our certain weights and observing changes to the predictions made by the models.
+    Later, we began working on using formal verification to provably determine which weights could be removed.
+    This used constraint solving methods to see if weights would get cancelled out in later calculations.
+</p>
+
+<h5>Lectures on Programming Paradigms</h5>
+<p>
+    My second research project was done as part of a self-led research course.
+    I was under the supervision of Professor Calver and Professor Gries.
+</p>
+<p>
+    During a course on functional programming, I was told about the various parts of functional languages.
+    Monads, pure functions, and the like.
+    However, at the end of the course, I asked the professor about why we would need such a language.
+    After all, one of the points made in class was that a functional language can do everything an Object Oriented language can do (and vice versa).
+    The answer was unsatisfactory.
+    The professor roughly said that it let's you think differently.
+    They obviously were unprepared for such a question.
+    But it nagged at me.
+    So I set out to learn more about why we have multiple programming paradigms.
+</p>
+<p>
+    My aim with this research project was to create a short series of lectures, notes, and other materials on various programming paradigms, philosophies, and techniques.
+    These give students knowledge on the common ideologies pervasive throughout the programming world and the confidence to wield them.
+    Since paradigms define the execution model of our programs and have a large sway over how we conceptualize our code, it should be clear that understanding these would provide a programmer with more opportunities to make informed decisions about their code.
+    Paradigms then should be understood in terms of their strengths and weaknesses and applied where appropriate.
+    From here, the idea leaked into broader contexts about similar programming ideas.
+    This included Clean Architecture, test driven development, design patterns, and a few others.
+</p>
+<p>
+    After performing a survey of literature in the field, I created lectures that covered the:
+    <ul>
+        <li>History of programming paradigms (procedural, functional, object oriented, and logical).</li>
+        <li>How we define programming paradigms and why we use them.</li>
+        <li>How tactfully choosing a paradigm can reduce programming effort.</li>
+        <li>A critique of object oriented programming.</li>
+        <li>A case study of object oriented programming in a real project.</li>
+    </ul>
+    I then presented these lectures to a class of second year computer science students at UofT as a guest speaker.
+    This was an extremely rewarding experience as I was able to really see students connect with the material I had been working on.
+    As a bit of a self-test, I had a few non-CS friends sit in on the lectures and asked them if they could follow along.
+    To my delight, these friends were able to understand the flow of my reasoning and the concepts I was presenting (minus a little bit of jargon).
+    I believe that this is one of the hallmarks of a strong presentation; that even those unfamiliar with the topic can pull something out of a presentation.
+</p>
+
+<h5>Building an Educational Rust Operating System</h5>
+<p>
+    My third and final undergrad research project was also done as part of a self-led research course.
+    Under the supervision of Professor Sun, I worked to build an educational operating system in Rust.
+</p>
+<p>
+    The idea of this project was to create a simple and modular OS that would be suitable for use in an OS course at university.
+    Typically in an OS course students are stuck to writing user-mode code that simply emulates what the kernel would really be doing.
+    While this may work for getting the idea across, something stuck out to me as missing.
+    Letting students get their hands in an actual kernel could remove a level of abstraction from their learning but all of the popular operating systems would simply be too unwieldy.
+    The idea to use the Rust language was made to provide a memory safe environment for students to hopefully limit frustrations that occur from memory errors.
+</p>
+<p>
+    Along with two other students, we set off to build <a href="https://github.com/KidneyOS/KidneyOS/">KidneyOS</a>.
+    During my tenure on the project, we setup many fundamental systems of an OS kernel including memory management, paging, threading, and loading executables.
+    My main code contributions were on the threading system where I implemented the concept of threads and the scheduler for the OS.
+    Personally, I found the challenge of implementing thread switching to be extremely satisfying to overcome.
+    I remember sitting in the computer lab with stacks and addresses sprawled over a whiteboard in an attempt to wrangle the various threads.
+    This also required me to dig into how the C calling convention and the register structure of x86 processors.
+</p>
+<p>
+    By the end of this semester, we had a simple kernel that could run and switch between a few basic programs.
+    The project was then passed onto a new group of students to continue development in the coming semesters.
+</p>
+
+<h4 id="awards-and-scholarships">Awards & Scholarships</h4>
+<p>
+    I was grateful and honored to receive some awards during my time at UofT:
+    <ul>
+        <li>BC Achievement Scholarship</li>
+        <li>KSS PAC Award</li>
+        <li>Capital News Bursary</li>
+        <li>Woodsworth College Scholarship</li>
+        <li>University of Toronto Excellence Award</li>
+        <li>Dean's List Scholar (2020 - 2024)</li>
+    </ul>
+</p>
+
+<h4 id="english-language-teaching">English Language Teaching</h4>
+<p>
+    In September 2024, I completed the <em>Certificate in Teaching English to Speakers of Other Languages</em> (<a href="https://www.cambridgeenglish.org/teaching-english/teaching-qualifications/celta/">CELTA</a>) with the <em>Centre of English Studies</em> (<a href="https://ces-schools.com/locations/dublin">CES</a>) in Dublin, Ireland.
+    I completed this course with a passing A grade, the highest grade available.
+</p>
+<p>
+    This was an intensive month-long course on both the theory and practice of teaching English as a second language.
+    As a student, I would be taking lectures on various pedagogical approaches to learning languages and making my own classes on different parts of the English language.
+    I would then present these classes to groups of actual students of CES who wished to practice their English.
+    This allowed for practical teaching experience as well as immediate feedback from those learning English in how well you were able to perform your lesson.
+    The lessons I gave and assignments I completed were done under strict requirements of quality.
+</p>
+<p>
+    My time in this course and living abroad were indescribably insightful.
+    I was forced to teach people without being able to speak the same language.
+    This challenge makes you rethink some fundamentals of how we learn.
+    I truly believe that it has since had a massive impact on the way in which I communicate with my co-workers as I rely more heavily on visually communicating my coding ideas.
+</p>
+
+<h3 id="what-do-i-program">What Do I Program?</h3>
+<p>
+    That's a lot of reading to get through before I talk about what code I actually write.
+    Personally, I appreciate writing code that is for other developers, rather then end-users.
+    Dev tools and bare-bones applications are what I do.
+    I typically don't like to get bogged down in fancy GUIs or the latest libraries.
+    I much prefer writing something from scratch as I find that I learn a lot more this way.
+    You can call it being inefficient, but I call it fun.
+</p>
+<p>
+    My favorite language is C by far.
+    While I've written C++, Rust, Python, Java, C#, JS, PHP, Haskell, and on and on, I always find that these languages feel bloated.
+    I find the common critiques of C being unsafe or hard to use are simply ill-founded.
+    Personally, I find a memory leak or out-of-bounds access in my code very infrequently and I attribute this to giving just a little bit extra care while writing the code.
+    Besides, am I the only one who finds debugging kinda fun?
+    C gives me a small, focused language that does not make a ton of assumptions or hide details for me.
+    I find implicit code to be the enemy and revel in explicit code.
+</p>
+
+<h3 id="why-do-i-program">Why Do I Program?</h3>
+<p>
+    I find mathematical proofs to be a riveting exercise for the same reason I like to program.
+    Building and navigating these systems feels like piecing together a big puzzle.
+    Slowly I reveal the deeper meaning and purpose of these components until in the end you have a wonderful program.
+</p>
+<p>
+    Programming, to me, is an art form.
+    I take care with each of my brush strokes and hope to always have a masterpiece in the end.
+    If I'm going to be working on code for the rest of my life, I might as well do it with some pride!
+</p>
+
+<h3 id="why-does-your-site-look-like-that">Why Does Your Site Look Like That?</h3>
+<p>
+    Well, I'm a programmer, not an artist.
+    I don't want to waste my time on some cheap tricks to make this look fancy, or reactive.
+    I'd rather spend my time working on some interesting code (sorry web-devs).
+</p>
+<p>
+    If this puts you off from me as a dev, I'd just tell you to reflect on why that is for a moment.
+</p>
+
+<hr />
+
+<p>
+    You made it all the way down here?
+    Good for you!
+    It means a lot to me.
+    &lt;3
+</p>

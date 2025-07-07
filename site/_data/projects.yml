@@ -1,0 +1,15 @@
+- name: KidneyOS
+  description: |
+    KidneyOs is an educational operating system writen in the rust language. It's primary goal is to serve as a simple and modifiable OS that students may edit and build during a university level OS course.
+  url: https://github.com/KidneyOS/KidneyOS
+- name: GameDesign11
+  description: |
+    GameDesign11 is...
+  url:
+- name: Drupal Digest
+  description: |
+    Digest is a simple Drupal module that allows websites to create a digest of content updates.
+  url: https://www.drupal.org/project/digest
+
+# Drupal Commerce / POS, Paradigm research and Lectures, ML synthesis research, personal research on education
+# merge with the info in the about page. I'd maybe like to render more unique content on the project page. Pictures and such.

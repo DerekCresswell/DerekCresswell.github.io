@@ -1,0 +1,21 @@
+---
+layout: default
+title: Blog
+---
+
+{% include blog_brief.html %}
+
+<h2>Recent Posts:</h2>
+
+{% assign blog_listings = "" | split: "" %}
+{% for post in site.posts %}
+    {% capture blog_listing_capture %}
+        {% include blog_listing.html post=post %}
+    {% endcapture %}
+    {% assign blog_listings = blog_listings | push: blog_listing_capture %}
+{% endfor %}
+
+{% include alternating_list.html
+    empty_message="No posts available at the moment. Check back soon..."
+    items=blog_listings
+%}
