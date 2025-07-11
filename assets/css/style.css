@@ -136,3 +136,11 @@ a:hover {
 .resume-viewer object {
     height: 1050px
 }
+
+.paragraphs p {
+    text-indent: 1em;
+}
+
+.center-text {
+    text-align: center;
+}
