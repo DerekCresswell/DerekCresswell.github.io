@@ -55,6 +55,10 @@ a:hover {
     width: 100%;
 }
 
+.nav-links li {
+    margin: 0 10px;
+}
+
 .active-link {
     color: #004c9d;
 }
@@ -122,6 +126,8 @@ a:hover {
     background-color: #f3f3f3;
     border-radius: 8px;
     width: fit-content;
+    margin-right: 10px;
+    float: left;
 }
 
 .table-of-contents ul {
