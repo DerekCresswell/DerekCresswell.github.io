@@ -1,15 +1,30 @@
 <nav>
     <ul class="nav-links">
-		{% for item in site.data.navigation %}
-			<li>
-				<a href="{{ item.link }}"
-					{% if page.url == item.link %}
-						class="active-link"
-					{% endif %}
-				>
-					{{ item.name }}
-				</a>
-			</li>
-		{% endfor %}
+		<div>
+			{% for item in site.data.navigation limit:3 %}
+				<li>
+					<a href="{{ item.link }}"
+						{% if page.url == item.link %}
+							class="active-link"
+						{% endif %}
+					>
+						{{ item.name }}
+					</a>
+				</li>
+			{% endfor %}
+		</div>
+		<div>
+			{% for item in site.data.navigation offset: continue %}
+				<li>
+					<a href="{{ item.link }}"
+						{% if page.url == item.link %}
+							class="active-link"
+						{% endif %}
+					>
+						{{ item.name }}
+					</a>
+				</li>
+			{% endfor %}
+		</div>
     </ul>
 </nav>
