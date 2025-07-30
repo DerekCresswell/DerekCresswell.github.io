@@ -118,6 +118,7 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 
 .profile-picture {
@@ -128,8 +129,13 @@ a:hover {
 }
 
 @media only screen and (max-width: 450px) {
+    .title-box {
+        flex-direction: column;
+    }
     .profile-picture {
-        display: none;
+        margin-right: 0;
+        width: auto;
+        height: 100px;
     }
 }
 
