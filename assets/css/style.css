@@ -146,6 +146,13 @@ a:hover {
     float: left;
 }
 
+@media only screen and (max-width: 500px) {
+    .table-of-contents {
+        float: none;
+        margin: auto;
+    }
+}
+
 .table-of-contents ul {
     margin: 0;
     padding-left: 20px;
