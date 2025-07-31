@@ -2,23 +2,51 @@
 layout: default
 title: Projects
 ---
+{% assign projects = "" | split: "" %}
 
-<p>
-    Hey!
-    I'll be adding some of my projects here soon.
-</p>
+{% capture projects_capture %}
+<h3>Drupal Core, Commerce, Fraud, and Digest</h3>
+<div class="paragraphs">
+    <p>
+        During my <a href="/about.html#career">first job</a>, I spent a lot of time working with the content management system <a href="https://www.drupal.org">Drupal</a>.
+        It was a wonderful experience to work on such a large and active open source project.
+        The developers that are dedicated to this project showcase a deep technical knowledge and provide (much desired) scrutiny on any work submitted.
+    </p>
+    <p>
+        I actively participated in fixing bugs and introducing new features to the <a href="https://www.drupal.org/project/drupal">Core of Drupal</a>.
+        The <a href="https://www.drupal.org/project/commerce">Commerce project</a> was my main focus and I contributed <a href="https://www.drupal.org/u/derekcresswell/issue-credits/2475121">20 fixes</a> to the <a href="https://www.drupal.org/project/commerce_fraud">Commerce Fraud project</a>.
+        This is a plugin that supports E-Commerce shops by identifying and stopping fraudulent purchases.
+    </p>
+    <p>
+        Lastly, I built an open-source plugin that provides Digests of content from websites to users.
+        This is the aptly named <a href="https://www.drupal.org/project/digest">Digest module</a>.
+        It is capable of sending real-time notifications to users about new content or build up digests on a given schedule.
+        To me, a very interesting part of this project was how it lead me to contribute to several over open source projects as I began to use them in the digest.
+        Notably, I worked on the <a href="https://github.com/dragonmantank/cron-expression">Cron Expression</a> library to provide my digests with their scheduling.
+    </p>
+    <p>
+        I was honored to have my work on the Digest module mentioned during a <a href="https://www.drupal.org/case-study/500-foods-website">case study</a> of the <a href="https://www.500foods.com/">500foods website</a>.
+        As a young developer, this was one of my highest achievements and gave me a real motivation to get my code into the real world.
+    </p>
+    <p>
+        During my tenure with Drupal, I was awarded the vetted role.
+        This was given after core maintainers of Drupal reviewed my modules and determined that I was able to write secure, quality code for the community.
+    </p>
+    <p>
+        If you are curious, my profile is <a href="https://www.drupal.org/u/derekcresswell">here</a> where you can see all of my contributions to Drupal.
+    </p>
+</div>
+{% endcapture %}
+{% assign projects = projects | push: projects_capture %}
 
-<!--
-{% assign project_listings = "" | split: "" %}
-{% for project in site.data.projects %}
-    {% capture project_listing_capture %}
-        {% include project_listing.html project=project %}
-    {% endcapture %}
-    {% assign project_listings = project_listings | push: project_listing_capture %}
-{% endfor %}
+<!-- Game design, OSS contrib -->
 
 {% include alternating_list.html
-empty_message="No projects are listed right now. Check back soon..."
-items=project_listings
+    items=projects
+    empty_message="If you see this, say something. It shouldn't be here."
 %}
--->
+
+<p>
+    I'm still working with a bit of a backlog to upload my major projects here.
+    Please have patience!
+</p>
