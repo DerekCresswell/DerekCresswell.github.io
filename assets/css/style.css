@@ -213,6 +213,7 @@ a:hover {
 .tags {
     justify-content: left;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .blog-listing-title-box {

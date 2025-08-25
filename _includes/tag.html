@@ -1,5 +1,5 @@
-<a class="tag-link" href="/blog/tags/{{ tag | slugify }}/">
+<a class="tag-link" href="/blog/tags/{{ include.tag | slugify }}/">
     <div class="tag">
-        #{{ tag }}
+        #{{ include.tag }}
     </div>
 </a>
