@@ -229,4 +229,6 @@ a:hover {
 .blog-date {
     margin-top: 10px;
     margin-bottom: 0px;
+    font-style: italic;
+    color: #575757;
 }
