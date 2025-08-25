@@ -1,2 +1,16 @@
-<a href="{{ include.post.url }}" class="listing-title">{{ include.post.title }}</a> | <span class="listing-date">{{ include.post.date | date: "%d/%m/%Y" }}</span>
+<div class="blog-listing-title-box">
+    <div>
+        <a href="{{ include.post.url }}" class="listing-title">{{ include.post.title }}</a>
+    </div>
+    <div class="blog-listing-split">|</div>
+    <div class="listing-date">{{ include.post.date | date: "%d/%m/%Y" }}</div>
+    <div class="blog-listing-split">|</div>
+    <div class="tags">
+        {% if include.post.tags %}
+                {% for tag in include.post.tags %}
+                    {% include tag.html tag=tag %}
+                {% endfor %}
+        {% endif %}
+    </div>
+</div>
 <p>{{ include.post.excerpt }}</p>

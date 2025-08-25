@@ -179,3 +179,54 @@ a:hover {
 .center-text {
     text-align: center;
 }
+
+.tag {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: small;
+    color: #007bff;
+    background-color: #aed5ff;
+    border-color: #007bff;
+    border-style: solid;
+    border-width: 2px;
+    float: left;
+    border-radius: 8px;
+    padding: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.tag:visited {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.tag:hover {
+    color: #004691;
+    border-color: #004691;
+}
+
+.tags {
+    justify-content: left;
+    display: flex;
+}
+
+.blog-listing-title-box {
+    justify-content: left;
+    display: flex;
+    align-items: center
+}
+
+.blog-listing-split {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.blog-post-header {
+
+}
+
+.blog-date {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
