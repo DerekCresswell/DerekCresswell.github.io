@@ -180,6 +180,10 @@ a:hover {
     text-align: center;
 }
 
+.tag-link {
+    display:block;
+}
+
 .tag {
     text-decoration: none;
     font-weight: bold;
