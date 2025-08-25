@@ -216,6 +216,20 @@ a:hover {
     flex-wrap: wrap;
 }
 
+.tag-header {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.tags-header-list {
+    list-style: none;
+    padding: 0px;
+}
+
+.tag-header-item {
+    margin-bottom: 10px;
+}
+
 .blog-listing-title-box {
     justify-content: left;
     display: flex;
