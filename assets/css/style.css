@@ -251,3 +251,23 @@ a:hover {
     font-style: italic;
     color: #575757;
 }
+
+pre {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f3f3f3;
+}
+
+code {
+    font-family: Monaco, monospace;
+    font-size: inherit;
+    background-color: #f3f3f3;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    overflow-x: scroll;
+}
