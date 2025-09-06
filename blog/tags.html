@@ -21,4 +21,18 @@ title: Blogs By Tags
             </ul>
         </li>
     {% endfor %}
+    <li class="tag-header-item">
+        <h4 id="Untagged" class="tag-header">Untagged</h4>
+        <ul>
+            {% for post in site.posts %}
+                {% if post.tags == empty %}
+                    <li>
+                        <span class="listing-date">{{ post.date | date: "%d/%m/%Y" }}</span>
+                        |
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </li>
 </ul>
