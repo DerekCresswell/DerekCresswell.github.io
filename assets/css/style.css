@@ -214,6 +214,7 @@ a:hover {
     justify-content: left;
     display: flex;
     flex-wrap: wrap;
+    row-gap: 5px;
 }
 
 .tag-header {

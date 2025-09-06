@@ -2,12 +2,7 @@
 layout: default
 title: Blogs By Tags
 ---
-<div class="tags">
-    {% for tag in site.tags %}
-        {% capture tag_data %}{{ tag[0] }}{% endcapture %}
-        {% include tag.html tag=tag_data %}
-    {% endfor %}
-</div>
+{% include all_tags.html %}
 
 <hr />
 
