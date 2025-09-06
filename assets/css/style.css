@@ -231,9 +231,13 @@ a:hover {
 }
 
 .blog-listing-title-box {
-    justify-content: left;
+    justify-content: space-between;
     display: flex;
     align-items: center
+}
+
+.blog-listing-title-box > :first-child {
+    width: 100%
 }
 
 .blog-listing-split {
