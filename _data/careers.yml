@@ -1,7 +1,16 @@
+- company: Cerebras
+  url: https://www.cerebras.ai/
+  start_date: October 2025
+  end_date: Present
+  position: Member of Technical Staff
+  position_description:
+    - Working on the Inference Core Platform to provide telemetry, feature integration, and performance guarantees.
+  company_description: |
+    Cerebras boasts the fastest AI Inference infrastructure with it's custom hardware, the Wafer Scale Engine.
 - company: AMD
   url: https://www.amd.com/
-  start_date: January 2026
-  end_date: Present
+  start_date: January 2025
+  end_date: October 2025
   position: Software Development Engineer 2
   position_description:
     - Pioneered a full migration from legacy Makefile-based build systems to CMake, reducing build times by 10x and dramatically shortening CI pipelines, enabling faster code-test iteration for developers.
